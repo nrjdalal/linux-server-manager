@@ -45,5 +45,5 @@ ln -s /etc/nginx/sites-available/$PORT.$DOMAIN.443.conf /etc/nginx/sites-enabled
 nginx -s reload
 
 echo
-echo "Config 80 created. Verify by ~ $(tput setaf 3)cat /etc/nginx/sites-enabled/$DOMAIN.80.conf$(tput sgr0)"
-echo "Config 443 created. Verify by ~ $(tput setaf 3)cat /etc/nginx/sites-enabled/$DOMAIN.443.conf$(tput sgr0)"
+echo "Config 80 created. Verify by ~ $(tput setaf 3)cat /etc/nginx/sites-enabled/$PORT.$DOMAIN.80.conf$(tput sgr0)"
+echo "Config 443 created. Verify by ~ $(tput setaf 3)cat /etc/nginx/sites-enabled/$PORT.$DOMAIN.443.conf$(tput sgr0)"
