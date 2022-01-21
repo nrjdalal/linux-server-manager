@@ -11,7 +11,7 @@ case ${data[0]} in
 certbot)
   src "$url/certbot.sh"
   ;;
-init)
+init | update | upgrade | autoremove)
   src "$url/init.sh"
   ;;
 i | install)
