@@ -16,7 +16,7 @@ if [[ "$(uname)" != "Linux" ]]; then
   _FAILURE "vero is only supported on Linux."
 fi
 
-success "Installing vero ver. ${Version}."
+success "Installing vero ${Version}."
 
 _ONLYSUDO
 # adding vero to bin
