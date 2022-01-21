@@ -16,16 +16,11 @@ vero init && vero i nginx && vero i node && vero i certbot
 vero nginx proxy-80
 ```
 
-# Certbot issue certificate
-
-```bash
-vero certbot --nginx
-```
-
 # Serve a https domain via reverse proxy
 
 > Issue a certificate via Certbot first
 
 ```bash
+vero certbot --nginx
 vero nginx proxy-443
 ```
