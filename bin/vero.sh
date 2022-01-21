@@ -20,7 +20,7 @@ nginx)
   src "$url/nginx.sh"
   ;;
 --update | --upgrade)
-  sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/nrjdalal/linux-server-manager/master/install.sh)" 2>/dev/null && _SUCCESS "vero is successfully upgraded."
+  sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/nrjdalal/linux-server-manager/master/install.sh)"
   ;;
 esac
 echo
