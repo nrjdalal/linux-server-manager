@@ -18,7 +18,9 @@ vero nginx proxy-80
 
 # Certbot issue certificate
 
+```bash
 vero certbot --nginx
+```
 
 # Serve a https domain via reverse proxy
 
