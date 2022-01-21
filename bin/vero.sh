@@ -23,4 +23,5 @@ nginx)
   sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/nrjdalal/linux-server-manager/master/install.sh)"
   ;;
 esac
-_SUCCESS
+
+echo "$(tput setaf 3)-- vero --$(tput sgr0)"
