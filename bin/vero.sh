@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/nrjdalal/linux-server-manager/master/install.sh)"
+
 data=("$@")
 source /usr/lib/vero/utils.sh
 
