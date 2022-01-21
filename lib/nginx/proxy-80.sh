@@ -1,7 +1,8 @@
 _ONLYSUDO
 
-echo 'Existing configs ~'
-ls /etc/nginx/sites-enabled/
+tput setaf 5
+ls /etc/nginx/sites-enabled/ | cat
+tput sgr0
 
 read -p "Enter domain name ~ " DOMAIN
 read -p "Enter proxy :port ~ " PORT
