@@ -20,8 +20,5 @@ i | install)
 nginx)
   src "$url/nginx.sh"
   ;;
--v | -version | --version)
-  src "$url/version.sh"
-  ;;
 esac
 echo
