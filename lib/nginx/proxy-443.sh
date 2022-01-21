@@ -44,7 +44,7 @@ ln -s /etc/nginx/sites-available/$DOMAIN.ssl.$PORT.conf /etc/nginx/sites-enabled
 
 nginx -s reload || echo && echo "$(tput setaf 1)HTTPS install failed, retrying HTTP$(tput sgr0)" &&
   rm -rf /etc/nginx/sites-available/$DOMAIN.* /etc/nginx/sites-enabled/$DOMAIN.* &&
-  nginx -s reload && vero nginx proxy-80 <<AUTORESPONSE
+  nginx -s reload && vero nginx proxy-http <<AUTORESPONSE
   $DOMAIN
   $PORT
 AUTORESPONSE
