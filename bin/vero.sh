@@ -1,8 +1,6 @@
 #!/bin/bash
 set -e
 
-sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/nrjdalal/linux-server-manager/master/install.sh)"
-
 data=("$@")
 source /usr/lib/vero/utils.sh
 
@@ -20,6 +18,9 @@ i | install)
   ;;
 nginx)
   src "$url/nginx.sh"
+  ;;
+--update | --upgrade)
+  sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/nrjdalal/linux-server-manager/master/install.sh)"
   ;;
 esac
 echo
