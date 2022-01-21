@@ -41,7 +41,12 @@ CONF
 ln -s /etc/nginx/sites-available/$DOMAIN.$PORT.conf /etc/nginx/sites-enabled/$DOMAIN.$PORT.conf 2>/dev/null || true
 ln -s /etc/nginx/sites-available/$DOMAIN.ssl.$PORT.conf /etc/nginx/sites-enabled/$DOMAIN.ssl.$PORT.conf 2>/dev/null || true
 
-nginx -s reload || echo "HTTPS install failed" && vero nginx proxy-80
+nginx -s reload || echo && echo "HTTPS install failed, retrying HTTP" &&
+  \ rm -rf /etc/nginx/sites-available/$DOMAIN.* /etc/nginx/sites-enabled/$DOMAIN.* &&
+  \ nginx -s reload && vero nginx proxy-80 <<AUTORESPONSE
+  $DOMAIN
+  $PORT
+AUTORESPONSE
 
 echo
 echo "Config 80 created. Verify by ~ $(tput setaf 3)cat /etc/nginx/sites-enabled/$DOMAIN.$PORT.conf$(tput sgr0)"
