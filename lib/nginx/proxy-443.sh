@@ -51,3 +51,5 @@ AUTORESPONSE
 
 echo
 echo "Config created. Verify by ~ $(tput setaf 3)cat /etc/nginx/sites-enabled/$DOMAIN.$PORT.conf$(tput sgr0)"
+
+_SUCCESS "HTTPS/SSL is successfully configured."
