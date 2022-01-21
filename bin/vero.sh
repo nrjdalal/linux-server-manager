@@ -6,7 +6,6 @@ source /usr/lib/vero/utils.sh
 
 url="$LIB_URL"
 
-echo
 case ${data[0]} in
 certbot)
   src "$url/certbot.sh"
