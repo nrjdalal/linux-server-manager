@@ -24,7 +24,7 @@ vero certbot --nginx
 
 # Serve a https domain via reverse proxy
 
-> It is recommended to issue a certificate via Certbot first
+> Issue a certificate via Certbot first
 
 ```bash
 vero nginx proxy-443
