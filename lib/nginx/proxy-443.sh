@@ -7,7 +7,6 @@ read -p "Enter domain name ~ " DOMAIN
 read -p "Enter proxy :port ~ " PORT
 
 rm -rf /etc/nginx/sites-available/$DOMAIN.* /etc/nginx/sites-enabled/$DOMAIN.*
-
 nginx -s reload
 
 cat >/etc/nginx/sites-available/$DOMAIN.$PORT.conf <<CONF
