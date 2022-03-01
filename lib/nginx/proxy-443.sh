@@ -42,11 +42,15 @@ CONF
 ln -s /etc/nginx/sites-available/$DOMAIN.$PORT.conf /etc/nginx/sites-enabled/$DOMAIN.$PORT.conf 2>/dev/null || true
 ln -s /etc/nginx/sites-available/$DOMAIN.ssl.$PORT.conf /etc/nginx/sites-enabled/$DOMAIN.ssl.$PORT.conf 2>/dev/null || true
 
-nginx -s reload || echo && echo "$(tput setaf 1)HTTPS install failed, retrying HTTP$(tput sgr0)" &&
-  rm -rf /etc/nginx/sites-available/$DOMAIN.* /etc/nginx/sites-enabled/$DOMAIN.* &&
-  nginx -s reload && vero nginx proxy-http <<AUTORESPONSE
-  $DOMAIN
-  $PORT
-AUTORESPONSE
+nginx -s reload
 
-echo "Config created. Verify by ~ $(tput setaf 3)cat /etc/nginx/sites-enabled/$DOMAIN.$PORT.conf$(tput sgr0)"
+if [[ "$?" == "0" ]]; then
+  echo "Config created. Verify by ~ $(tput setaf 3)cat /etc/nginx/sites-enabled/$DOMAIN.$PORT.conf$(tput sgr0)"
+else
+  echo "$(tput setaf 1)HTTPS install failed, retrying HTTP$(tput sgr0)" &&
+    rm -rf /etc/nginx/sites-available/$DOMAIN.* /etc/nginx/sites-enabled/$DOMAIN.* &&
+    nginx -s reload && vero nginx proxy-http <<AUTORESPONSE
+$DOMAIN
+$PORT
+AUTORESPONSE
+fi
