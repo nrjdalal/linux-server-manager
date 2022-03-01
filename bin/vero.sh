@@ -1,6 +1,4 @@
 #!/bin/bash
-set -e
-
 data=("$@")
 source /usr/lib/vero/utils.sh
 
