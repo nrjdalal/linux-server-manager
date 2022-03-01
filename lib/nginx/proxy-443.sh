@@ -46,6 +46,7 @@ nginx -s reload
 
 if [[ "$?" == "0" ]]; then
   echo "Config created. Verify by ~ $(tput setaf 3)cat /etc/nginx/sites-enabled/$DOMAIN.$PORT.conf$(tput sgr0)"
+  echo "Config created. Verify by ~ $(tput setaf 3)cat /etc/nginx/sites-enabled/$DOMAIN.ssl.$PORT.conf$(tput sgr0)"
 else
   echo "$(tput setaf 1)HTTPS install failed, retrying HTTP$(tput sgr0)" &&
     rm -rf /etc/nginx/sites-available/$DOMAIN.* /etc/nginx/sites-enabled/$DOMAIN.* &&
